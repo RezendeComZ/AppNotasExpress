@@ -2,11 +2,14 @@ var express = require('express');
 var router = express.Router();
 let notas = require('../notasSalvas')
 
-/* GET home page. */
+// Home
 router.get('/', function(req, res, next) {
-  res.render('index', { notas: notas });
+  let fixos = notas.filter(nota => nota.pin === true)
+  let naoFixos = notas.filter(nota => nota.pin === false)
+  res.render('index', { fixos: fixos, naoFixos: naoFixos });
 });
 
+// Página de nota indidual
 router.get('/nota/:id', (req, res) => {
   let reg = notas.findIndex( element => element.id === parseInt(req.params.id))
   if (reg > -1) {
@@ -16,6 +19,7 @@ router.get('/nota/:id', (req, res) => {
   }
 });
 
+// Form - incompleto
 router.get('/form', function(req, res, next) {
   res.render('_form');
 });

@@ -4,13 +4,9 @@ body {
   background-color: rgb(48, 48, 48);
   color: white;
 }
-
 a {
+  text-decoration: none;
   color: #00B7FF;
-}
-.posts {
-  display:flex;
-  flex-wrap: wrap;
 }
 .postit {
   display: flex;
@@ -23,21 +19,25 @@ a {
   margin: 5px;
   padding: 10px;
 }
+.naoFixos {
+  display:flex;
+  flex-wrap: wrap;
+}
+.fixos {
+  display: flex;
+  flex-wrap: wrap;
+}
 .pintrue {
   background-color: rgba(255, 217, 0, 0.404);
 }
-
 .regPost {
   position: relative;
   bottom: 5px;
   font-size: 0.8em;
 }
-
 .headPost {
   font-weight: bold;
   font-size: 1.1em;
-
 }
-
 .bodyPost {
 }

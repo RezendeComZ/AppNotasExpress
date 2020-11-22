@@ -7,20 +7,38 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <div class="posts">
-      <% notas.forEach(nota => { %>
-        <div class="postit pin<%= nota.pin %>">
-          <div class="regPost">
-            <a href="/nota/<%= nota.id %>"><%= nota.id %></a>
-          </div>
-          <div class="headPost">
-            <%= nota.h %>
-          </div>
-          <div class="bodyPost">
-            <%= nota.b %>
-          </div>
-          </div>
-      <% }) %>
+    <div class="notas">
+      <div class="fixos">
+        <% fixos.forEach(nota => { %>
+          <div class="postit pin<%= nota.pin %>">
+            <div class="regPost">
+              <a href="/nota/<%= nota.id %>"><%= nota.id %></a>
+            </div>
+            <div class="headPost">
+              <%= nota.h %>
+            </div>
+            <div class="bodyPost">
+              <%= nota.b %>
+            </div>
+            </div>
+        <% }) %>
+      </div>
+      <br>
+      <div class="naoFixos">
+        <% naoFixos.forEach(nota => { %>
+          <div class="postit pin<%= nota.pin %>">
+            <div class="regPost">
+              <a href="/nota/<%= nota.id %>"><%= nota.id %></a>
+            </div>
+            <div class="headPost">
+              <%= nota.h %>
+            </div>
+            <div class="bodyPost">
+              <%= nota.b %>
+            </div>
+            </div>
+        <% }) %>
+      </div>
 
     </div> 
     </div>

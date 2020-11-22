@@ -52,6 +52,18 @@ let notas = [
     h: 'Aprender a usar express',
     b: 'opa, já é express aqui',
     pin: false
+  },
+  {
+    id: 15,
+    h: 'Aprender melhor a usar flex',
+    b: '',
+    pin: false
+  },
+  {
+    id: 16,
+    h: 'Outro',
+    b: 'pra fazer volume',
+    pin: false
   }
 ]
 

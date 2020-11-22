@@ -40,6 +40,18 @@ let notas = [
     h: 'Aprender a usar JSON',
     b: 'e usar nesse mesmo projeto',
     pin: false
+  },
+  {
+    id: 9,
+    h: 'Aprender a usar require',
+    b: 'e usar aqui',
+    pin: false
+  },
+  {
+    id: 12,
+    h: 'Aprender a usar express',
+    b: 'opa, já é express aqui',
+    pin: false
   }
 ]
 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Notas Express</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="posts">
+      <% notas.forEach(nota => { %>
+        <div class="postit">
+          <div class="regPost">
+            <a href="/nota/<%= nota.id %>"><%= nota.id %></a>
+          </div>
+          <div class="headPost">
+            <%= nota.h %>
+          </div>
+          <div class="bodyPost">
+            <%= nota.b %>
+          </div>
+          </div>
+      <% }) %>
+
+    </div> 
+    </div>
+    <%- include('partials/footer') %>
+  </body>
+</html>

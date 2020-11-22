@@ -9,7 +9,7 @@
   <body>
     <div class="posts">
       <% notas.forEach(nota => { %>
-        <div class="postit">
+        <div class="postit pin<%= nota.pin %>">
           <div class="regPost">
             <a href="/nota/<%= nota.id %>"><%= nota.id %></a>
           </div>
@@ -24,6 +24,5 @@
 
     </div> 
     </div>
-    <%- include('partials/footer') %>
   </body>
 </html>

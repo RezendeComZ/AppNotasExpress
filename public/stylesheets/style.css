@@ -32,6 +32,8 @@ a {
 }
 .regPost {
   position: relative;
+  display:flex;
+  justify-content: space-between;
   bottom: 5px;
   font-size: 0.8em;
 }
@@ -40,4 +42,5 @@ a {
   font-size: 1.1em;
 }
 .bodyPost {
+  padding: 10px 0px;
 }

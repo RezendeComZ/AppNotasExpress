@@ -10,10 +10,10 @@
     <div class="notas">
       <div class="fixos">
         <% fixos.forEach(nota => { %>
-          <div class="postit pin<%= nota.pin %>">
+          <div class="postit pin<%= nota.pin %>" id="<%=nota.id%>">
             <div class="regPost">
               <a href="/nota/<%= nota.id %>"><%= nota.id %></a>
-              <button>X</button>
+              <button onclick="btApagar(<%=nota.id%>)">X</button>
             </div>
             <div class="headPost">
               <%= nota.h %>
@@ -27,10 +27,10 @@
       <br>
       <div class="naoFixos">
         <% naoFixos.forEach(nota => { %>
-          <div class="postit pin<%= nota.pin %>">
+          <div class="postit pin<%= nota.pin %>"  id="<%=nota.id%>">
             <div class="regPost">
               <a href="/nota/<%= nota.id %>"><%= nota.id %></a>
-              <button>X</button>
+              <button onclick="btApagar(<%=nota.id%>)">X</button>
             </div>
             <div class="headPost">
               <%= nota.h %>
@@ -44,5 +44,6 @@
 
     </div> 
     </div>
+    <script src="./javascripts/funcoes.js"></script>
   </body>
 </html>

@@ -4,7 +4,7 @@ const controle = {
   home: function(req, res, next) {
     let fixos = notas.filter(nota => nota.pin === true)
     let naoFixos = notas.filter(nota => nota.pin === false)
-    res.render('index', { fixos: fixos, naoFixos: naoFixos });
+    res.render('index', { fixos, naoFixos });
   },
   mostraNota: (req, res,) => {
     res.render('_form');

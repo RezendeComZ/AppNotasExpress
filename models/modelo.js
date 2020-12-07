@@ -4,7 +4,7 @@ const Schema =  mongoose.Schema;
 const notaSchema = new Schema({
   id: {
     type: Number,
-    required: true
+    required: false
   },
   h: {
     type: String,

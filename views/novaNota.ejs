@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Notas Express</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <form action='/' method="POST" class="inserir">
+      <div class="quickText">      
+        <input type="text" id='headField' name="h" size="27" onfocus=this.value='' placeholder="Insira a nota aqui (Enter para enviar)" onkeypress="deuEnter()">
+        <input type="checkbox" id='fixo' name="pin" value="false"><label for="fixo">Fixar</label>
+        <button onclick="btEnviar()">Enviar</button>
+        <button onclick="escondeInserir()">X</button>
+        <br/>
+      </div>
+      <div class="textoLongo">
+        <textarea type="text" name="b" id="bodyField" cols="43" rows="5" onfocus=this.value='' placeholder="Ctrl/Cmd + Enter" onkeydown="deuCtrlEnter()"></textarea> <!-- A alternativa a cols e rows é: style="width:250px;height:150px;" -->
+      </div>
+      <p id='sugesAtalho'>Utilize a tecla <span>˜`</span> como atalho.</p>
+    </form>
+    <%- include('./partials/_footer.ejs') %>
+    <script src="./javascripts/funcoes.js"></script>
+  </body>
+</html>

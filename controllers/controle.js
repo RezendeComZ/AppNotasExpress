@@ -2,24 +2,20 @@ let notas = require('../notasSalvas')
 const Nota = require('../models/modelo');
 
 const controle = {
-  home: function(req, res, next) {
-    let fixos = notas.filter(nota => nota.pin === true)
-    let naoFixos = notas.filter(nota => nota.pin === false)
-    res.render('index', { fixos, naoFixos, qntNotas: notas.length });
-  },
-  homeDB: (req,res) => {
+  home: (req,res) => {
     Nota.find()
       .then((result) => {
         let fixos = result.filter(nota => nota.pin === true)
-        let naoFixos = result.filter(nota => nota.pin === false)
-        res.render('indexdb', { fixos, naoFixos })
+        let naoFixos = result.filter(nota => nota.pin !== true)
+        res.render('index', { fixos, naoFixos })
       })
       .catch((err) => {
         console.log(err)
       })
   },
-
-
+  novaNota: (req, res) => {
+    res.render('novaNota');
+  },
   mostraNota: (req, res,) => {
     res.render('_form');
   },

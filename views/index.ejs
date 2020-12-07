@@ -10,13 +10,12 @@
     <div class="notas">
       <div class="fixos">
         <% fixos.forEach(nota => { %>
-          <div class="postit pin<%= nota.pin %>" id="<%=nota.id%>">
-            <div class="regPost">
-              <a href="/nota/<%= nota.id %>"><%= nota.id %></a>
-              <button onclick="btApagar(<%=nota.id%>)">X</button>
+          <div class="postit pin<%= nota.pin %>" id="<%=nota._id%>">
+            <div class="botao">
+              <button onclick="btApagar('<%=nota._id%>')">X</button>
             </div>
             <div class="headPost">
-              <%= nota.h %>
+              <a href="/nota/<%= nota._id %>"><%= nota.h %></a>
             </div>
             <div class="bodyPost">
               <%= nota.b %>
@@ -27,13 +26,12 @@
       <br>
       <div class="naoFixos">
         <% naoFixos.forEach(nota => { %>
-          <div class="postit pin<%= nota.pin %>"  id="<%=nota.id%>">
-            <div class="regPost">
-              <a href="/nota/<%= nota.id %>"><%= nota.id %></a>
-              <button onclick="btApagar(<%=nota.id%>)">X</button>
+          <div class="postit pin<%= nota.pin %>" id="<%=nota._id%>">
+            <div class="botao">
+              <button onclick="btApagar('<%=nota._id%>')">X</button>
             </div>
             <div class="headPost">
-              <%= nota.h %>
+              <a href="/nota/<%= nota._id %>"><%= nota.h %></a>
             </div>
             <div class="bodyPost">
               <%= nota.b %>
@@ -41,10 +39,8 @@
             </div>
         <% }) %>
       </div>
-
-    </div> 
     </div>
     <%- include('./partials/_footer.ejs') %>
-    <script src="./javascripts/funcoes.js"></script>
+    <script src="/javascripts/front.js"></script>
   </body>
 </html>

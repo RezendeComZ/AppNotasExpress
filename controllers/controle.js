@@ -1,4 +1,3 @@
-let notas = require('../notasSalvas')
 const Nota = require('../models/modelo');
 
 const controle = {
@@ -22,14 +21,24 @@ const controle = {
   redictHome: (req, res) => {
     res.redirect('/');
   },
-  notaIndividual: (req, res) => {
-    let reg = notas.findIndex( element => element.id === parseInt(req.params.id))
-    if (reg > -1) {
-      res.render('nota', { id:req.params.id, nota: notas[reg] });
-    } else {
-      res.send('Nota inexistente')
-    }
-  }
+    notaIndividual: (req, res) => {
+      Nota.findById(req.params.id)
+      .then((result) => {
+        let nota = result
+        res.render('nota', { nota })
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  },
+  // notaIndividual: (req, res) => {
+  //   let reg = notas.findIndex( element => element.id === parseInt(req.params.id))
+  //   if (reg > -1) {
+  //     res.render('nota', { id:req.params.id, nota: notas[reg] });
+  //   } else {
+  //     res.send('Nota inexistente')
+  //   }
+  // }
 }
 
 module.exports = controle;

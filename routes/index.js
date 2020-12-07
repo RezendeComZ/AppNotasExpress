@@ -7,6 +7,9 @@ const Nota = require('../models/modelo');
 // Home
 router.get('/', controle.home);
 
+// Home DB
+router.get('/homedb', controle.homeDB);
+
 // Página de nota indidual
 router.get('/nota/:id', controle.notaIndividual);
 
@@ -23,9 +26,9 @@ module.exports = router;
 router.get('/add-nota', (req, res) => {
   const notaTeste = new Nota({
     id: 69,
-    h: 'Testando hidusagduahgdasjhg',
-    b: 'body que fica na nota',
-    pin: true
+    h: 'Testando Não fixa',
+    b: 'notinha não fixa',
+    pin: false
   });
   // Método pra salvar no banco de dados (assíncrona):
   notaTeste.save()

@@ -20,6 +20,9 @@ a {
   margin: 5px;
   padding: 10px;
 }
+.postit:hover {
+  background-color: rgb(63, 56, 56);
+}
 .naoFixos {
   display:flex;
   flex-wrap: wrap;
@@ -37,9 +40,13 @@ a {
   position: absolute;
   display:flex;
   align-self: flex-end;
-  top: 8px;
   font-size: 0.8em;
   z-index: 2;
+  opacity: 0.8;
+  display: none;
+}
+.postit:hover .botao {
+  display: block
 }
 .headPost {
   font-weight: bold;

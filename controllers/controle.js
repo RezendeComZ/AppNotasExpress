@@ -15,9 +15,6 @@ const controle = {
   novaNota: (req, res) => {
     res.render('novaNota');
   },
-  mostraNota: (req, res,) => {
-    res.render('_form');
-  },
   redictHome: (req, res) => {
     res.redirect('/');
   },

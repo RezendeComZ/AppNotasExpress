@@ -16,7 +16,6 @@ const notaSchema = new Schema({
   },
   pin: {
     type: Boolean,
-    required: false
   }
 
 }, { timestamps: true });

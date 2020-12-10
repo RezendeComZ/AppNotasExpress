@@ -29,9 +29,6 @@ router.post('/', (req, res) => {
 // Página de nota indidual
 router.get('/nota/:id', controle.notaIndividual);
 
-// Form - incompleto
-router.get('/form', controle.mostraNota);
-
 // Redirectionar
 router.get('/notas', controle.redictHome)
 

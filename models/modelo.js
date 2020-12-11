@@ -2,10 +2,6 @@ const mongoose = require('../node_modules/mongoose')
 const Schema =  mongoose.Schema;
 
 const notaSchema = new Schema({
-  id: {
-    type: Number,
-    required: false
-  },
   h: {
     type: String,
     required: true
@@ -17,9 +13,7 @@ const notaSchema = new Schema({
   pin: {
     type: Boolean,
   }
-
 }, { timestamps: true });
-
 
 const Nota = mongoose.model('Nota', notaSchema) // Vai acessar a coleção na DB
 

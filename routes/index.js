@@ -26,8 +26,14 @@ router.post('/', (req, res) => {
     })
 })
 
+// Deletar
+router.delete('')
+
 // Página de nota indidual
 router.get('/nota/:id', controle.notaIndividual);
+
+// Deletar
+router.delete('/nota/:id', controle.apagaIndividual)
 
 // Redirectionar
 router.get('/notas', controle.redictHome)

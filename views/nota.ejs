@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nota ID <%= nota.id %> -  <%= nota.h %></title>
+  <title>Nota: <%= nota.h %></title>
   <link rel='stylesheet' href='../stylesheets/style.css' />
 
 </head>
@@ -17,6 +17,21 @@
       <%= nota.b %>
     </div>
     </div>
+    <a class="apagar" data-doc="<%= nota._id %>">Apagar</a>
     <%- include('./partials/_footer.ejs') %>
+    <script>
+      const lixeira = document.querySelector('a.apagar');
+
+      lixeira.addEventListener('click', (e) => {
+        const endpoint = `/nota/${lixeira.dataset.doc}`;
+
+        fetch(endpoint, {
+          method: 'DELETE'
+        })
+          .then((response) => response.json())
+          .then((data) => window.location.href = data.redirect)
+          .catch(err => console.log(err));
+      })
+    </script>
 </body>
 </html>

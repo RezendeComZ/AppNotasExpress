@@ -28,6 +28,17 @@ const controle = {
         console.log(err)
       })
   },
+    apagaIndividual: (req, res) => {
+      const id = req.params.id;
+    
+      Nota.findByIdAndDelete(id)
+        .then(result => {
+          res.json({ redirect: '/' })
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    },
   // notaIndividual: (req, res) => {
   //   let reg = notas.findIndex( element => element.id === parseInt(req.params.id))
   //   if (reg > -1) {

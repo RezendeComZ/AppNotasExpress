@@ -12,7 +12,7 @@
         <% fixos.forEach(nota => { %>
           <div class="postit pin<%= nota.pin %>" id="<%=nota._id%>">
             <div class="botao">
-              <button onclick="btApagar('<%=nota._id%>')">X</button>
+              <button data-doc="<%= nota._id %>" onclick="btApagar('<%=nota._id%>')">X</button>
             </div>
             <div class="headPost">
               <a href="/nota/<%= nota._id %>"><%= nota.h %></a>

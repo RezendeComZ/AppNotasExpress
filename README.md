@@ -2,8 +2,7 @@
 
 Evolução do App de notas que rodava direto no navegador só com HTML e javascript.
 
-Roadmap:
-~~ Readme ~~
+**Roadmap:**
 * Hashtag para indicar o assunto
 * Rota parametrizada com a hastag (ex: #compras = /compras/)
 * Selecionar cores das notas

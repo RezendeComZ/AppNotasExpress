@@ -49,8 +49,8 @@ const controle = {
       // Método pra salvar no banco de dados (assíncrona):
       notaTeste.save()
       .then((result) => {
-        res.send(result)
-        console.log('Aparentemente foi pra DB (index em routes)')
+        res.render('nota', { nota: result })
+        console.log('Nota adicionada via req.query')
       })
       .catch((err) => {
         console.log(err);

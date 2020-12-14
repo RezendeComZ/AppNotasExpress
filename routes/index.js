@@ -56,7 +56,7 @@ router.get('/todas-notas', (req, res) => {
 router.get('/uma-nota', (req, res) => {
   Nota.findById('5fcd52e100b2cda9e2e75994')
     .then((result) => {
-      res.send(result) // Uma forma de redirectionar para a nota criada?
+      res.send(result) 
     })
     .catch((err) => {
       console.log(err)

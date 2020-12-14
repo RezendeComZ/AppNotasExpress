@@ -39,6 +39,23 @@ const controle = {
           console.log(err)
         })
     },
+    addQuery: (req, res) => {
+      let { h, b, pin } = req.query;
+      const notaTeste = new Nota({
+        h: h,
+        b: b,
+        pin: pin
+      });
+      // Método pra salvar no banco de dados (assíncrona):
+      notaTeste.save()
+      .then((result) => {
+        res.send(result)
+        console.log('Aparentemente foi pra DB (index em routes)')
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    },
   // notaIndividual: (req, res) => {
   //   let reg = notas.findIndex( element => element.id === parseInt(req.params.id))
   //   if (reg > -1) {

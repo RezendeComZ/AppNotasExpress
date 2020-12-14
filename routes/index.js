@@ -38,7 +38,7 @@ router.delete('/nota/:id', controle.apagaIndividual)
 // Redirectionar
 router.get('/notas', controle.redictHome)
 
-module.exports = router;
+module.exports = router; 
 
 
 // Mostrar o que tem no banco de dados:
@@ -56,9 +56,12 @@ router.get('/todas-notas', (req, res) => {
 router.get('/uma-nota', (req, res) => {
   Nota.findById('5fcd52e100b2cda9e2e75994')
     .then((result) => {
-      res.send(result)
+      res.send(result) // Uma forma de redirectionar para a nota criada?
     })
     .catch((err) => {
       console.log(err)
     })
 })
+
+// add nota via querys:
+router.get('/add', controle.addQuery);
